@@ -176,6 +176,60 @@
     .centered { text-align: center; }
     .centered .section-sub { margin: 0 auto; }
 
+    /* ── DESPRE MINE ── */
+    #despre { background: var(--bg2); }
+    .despre-wrapper {
+      max-width: 860px; margin: 0 auto;
+      display: grid; grid-template-columns: 220px 1fr; gap: 4rem; align-items: center;
+    }
+    .despre-photo-wrap { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
+    .despre-photo {
+      width: 200px; height: 200px; border-radius: 50%;
+      background: linear-gradient(135deg, #1a2540, #0d1628);
+      border: 3px solid rgba(108,99,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      box-shadow: 0 0 0 8px rgba(108,99,255,0.07), var(--shadow);
+    }
+    .despre-photo-placeholder {
+      display: flex; flex-direction: column; align-items: center; gap: .5rem;
+      color: rgba(255,255,255,0.2);
+    }
+    .despre-photo-placeholder svg { opacity: .35; }
+    .despre-photo-placeholder span { font-size: .72rem; letter-spacing: .5px; }
+    .despre-photo-ring {
+      position: absolute; inset: -3px; border-radius: 50%;
+      background: conic-gradient(var(--accent), var(--accent2), var(--accent));
+      z-index: -1; animation: spinRing 6s linear infinite;
+    }
+    @keyframes spinRing { to { transform: rotate(360deg); } }
+    .despre-name-badge {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 50px; padding: .4rem 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .85rem; font-weight: 600; color: var(--text);
+      text-align: center;
+    }
+    .despre-content .section-label { margin-bottom: .6rem; }
+    .despre-content h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700; letter-spacing: -.5px; margin-bottom: 1.2rem;
+    }
+    .despre-text { color: var(--muted); font-size: 1.02rem; line-height: 1.8; margin-bottom: 1.6rem; }
+    .despre-text strong { color: var(--text); }
+    .despre-chips { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .chip {
+      background: var(--card); border: 1px solid var(--border);
+      color: var(--muted); font-size: .82rem;
+      padding: .35rem .9rem; border-radius: 50px;
+      display: flex; align-items: center; gap: .4rem;
+    }
+    @media (max-width: 680px) {
+      .despre-wrapper { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+      .despre-chips { justify-content: center; }
+    }
+
     /* ── SERVICES ── */
     #servicii { background: var(--bg2); }
     .services-grid {
@@ -789,6 +843,36 @@
   </div>
 </section>
 
+<!-- DESPRE MINE -->
+<section id="despre">
+  <div class="despre-wrapper">
+    <div class="despre-photo-wrap reveal">
+      <div class="despre-photo">
+        <div class="despre-photo-ring"></div>
+        <div class="despre-photo-placeholder">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          <span>Adaugă poza</span>
+        </div>
+      </div>
+      <div class="despre-name-badge">Cojocariu Emilian</div>
+    </div>
+    <div class="despre-content reveal reveal-delay-1">
+      <div class="section-label">Despre mine</div>
+      <h2>Developer român, rezultate reale</h2>
+      <p class="despre-text">
+        Sunt un developer român <strong>pasionat de tehnologie</strong> și ajut firmele mici să crească online prin site-uri profesionale și asistenți AI.<br><br>
+        Fiecare proiect îl tratez ca și cum ar fi al meu — de la primul mesaj până la lansare și după. Nu sunt o agenție cu zeci de clienți în aer — când lucrăm împreună, ești prioritatea mea.
+      </p>
+      <div class="despre-chips">
+        <span class="chip">⚡ Livrare rapidă</span>
+        <span class="chip">🤖 AI & Automatizare</span>
+        <span class="chip">🇷🇴 Based în România</span>
+        <span class="chip">💬 Comunicare directă</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- SERVICES -->
 <section id="servicii">
   <div class="section-header centered">
@@ -878,72 +962,75 @@
     <p class="section-sub">Investiție corectă pentru rezultate premium. Fără costuri ascunse.</p>
   </div>
   <div class="prices-grid">
+    <!-- Card 1: Site Simplu -->
     <div class="price-card reveal">
       <div class="price-label">Plată unică</div>
       <div class="price-name">Site Simplu</div>
       <div class="price-amount">
         <span class="price-currency">€</span>
         <span class="price-num">100</span>
-        <span class="price-period">— 200€</span>
+        <span class="price-period">– 200</span>
       </div>
-      <p class="price-desc">Perfect pentru o prezență online rapidă. Ideal pentru freelanceri, meșteri sau firme care au nevoie de un site simplu și eficient.</p>
+      <p class="price-desc">Ideal dacă ai nevoie să fii găsit online rapid — fără funcționalități complexe, fără costuri mari. Gata în 3 zile.</p>
       <ul class="price-features">
-        <li><span class="check">✓</span><span>1–3 pagini incluse</span></li>
-        <li><span class="check">✓</span><span>Design modern, personalizat</span></li>
-        <li><span class="check">✓</span><span>Responsive — perfect pe mobil</span></li>
-        <li><span class="check">✓</span><span>Formular de contact</span></li>
-        <li><span class="check">✓</span><span>Livrare în 3 zile</span></li>
-        <li><span class="check">✓</span><span>1 săptămână suport gratuit</span></li>
+        <li><span class="check">✓</span><span>1–3 pagini (Acasă, Despre, Contact)</span></li>
+        <li><span class="check">✓</span><span>Design modern, adaptat brandului</span></li>
+        <li><span class="check">✓</span><span>Optimizat pentru mobil</span></li>
+        <li><span class="check">✓</span><span>Formular de contact funcțional</span></li>
+        <li><span class="check">✓</span><span>Livrare în 3 zile lucrătoare</span></li>
+        <li><span class="check">✓</span><span>1 săptămână suport după lansare</span></li>
       </ul>
-      <a href="#contact" class="btn-secondary" style="text-align:center; display:block; text-decoration:none; padding:.85rem 2rem; border-radius:50px;">Solicită ofertă</a>
+      <a href="#contact" class="btn-secondary" style="text-align:center; display:block; text-decoration:none; padding:.85rem 2rem; border-radius:50px;">Solicită ofertă gratuită</a>
       <p class="price-note">Hosting & domeniu nu sunt incluse (~5€/lună)</p>
     </div>
+    <!-- Card 2: Site Profesional -->
     <div class="price-card reveal reveal-delay-1">
-      <div class="price-label">Plată unică</div>
-      <div class="price-name">Site Web</div>
+      <div class="price-label">Plată unică · Preț la cerere</div>
+      <div class="price-name">Site Profesional</div>
       <div class="price-amount">
-        <span class="price-num" style="font-size:2.2rem;">Preț personalizat</span>
+        <span class="price-num" style="font-size:2rem;">La cerere</span>
       </div>
-      <p class="price-desc">Fiecare proiect e unic — prețul depinde de complexitate, numărul de pagini și funcționalități. Contactează-mă pentru o ofertă gratuită în 24 ore.</p>
+      <p class="price-desc">Pentru firme care vor mai mult decât o simplă prezență — design premium, funcționalități avansate, optimizat să aducă clienți.</p>
       <ul class="price-features">
-        <li><span class="check">✓</span><span>Design personalizat, unic</span></li>
-        <li><span class="check">✓</span><span>Până la 6 secțiuni / pagini</span></li>
-        <li><span class="check">✓</span><span>Optimizat pentru mobile</span></li>
-        <li><span class="check">✓</span><span>SEO de bază inclus</span></li>
-        <li><span class="check">✓</span><span>Formulare de contact</span></li>
-        <li><span class="check">✓</span><span>1 lună suport gratuit</span></li>
+        <li><span class="check">✓</span><span>Pagini nelimitate + blog opțional</span></li>
+        <li><span class="check">✓</span><span>Design unic, creat de la zero</span></li>
+        <li><span class="check">✓</span><span>SEO on-page inclus</span></li>
+        <li><span class="check">✓</span><span>Integrări avansate (Maps, Chat, CRM)</span></li>
+        <li><span class="check">✓</span><span>Panou de administrare conținut</span></li>
+        <li><span class="check">✓</span><span>1 lună suport prioritar după lansare</span></li>
       </ul>
-      <a href="#contact" class="btn-secondary" style="text-align:center; display:block; text-decoration:none; padding:.85rem 2rem; border-radius:50px;">Solicită ofertă</a>
+      <a href="#contact" class="btn-secondary" style="text-align:center; display:block; text-decoration:none; padding:.85rem 2rem; border-radius:50px;">Cere ofertă gratuită în 24h</a>
       <p class="price-note">Hosting & domeniu nu sunt incluse (~5€/lună)</p>
     </div>
+    <!-- Card 3: Chatbot AI -->
     <div class="price-card featured reveal reveal-delay-2">
-      <div class="price-label">Lunar</div>
+      <div class="price-label">Abonament lunar</div>
       <div class="price-name">Chatbot AI</div>
       <div class="price-amount">
         <span class="price-currency">€</span>
         <span class="price-num">39</span>
         <span class="price-period">/lună</span>
       </div>
-      <p class="price-desc">Abonament lunar. Anulezi oricând, fără penalizări. Include setup gratuit.</p>
+      <p class="price-desc">Un asistent virtual antrenat cu informațiile firmei tale — răspunde clienților, captează cereri și programează 24/7, fără să fii tu acolo.</p>
       <ul class="price-features">
-        <li><span class="check">✓</span><span>Setup & configurare gratuite</span></li>
-        <li><span class="check">✓</span><span>Antrenat cu datele firmei</span></li>
+        <li><span class="check">✓</span><span>Setup & configurare incluse</span></li>
+        <li><span class="check">✓</span><span>Antrenat cu datele firmei tale</span></li>
         <li><span class="check">✓</span><span>Răspunsuri automate 24/7</span></li>
-        <li><span class="check">✓</span><span>Captare automată lead-uri</span></li>
+        <li><span class="check">✓</span><span>Captare automată de lead-uri</span></li>
         <li><span class="check">✓</span><span>Raport lunar de activitate</span></li>
-        <li><span class="check">✓</span><span>Update-uri și îmbunătățiri</span></li>
+        <li><span class="check">✓</span><span>Actualizări incluse lunar</span></li>
       </ul>
       <a href="#contact" class="btn-primary" style="text-align:center; display:block; text-decoration:none; padding:.85rem 2rem; border-radius:50px;">Vreau chatbot AI</a>
-      <p class="price-note">Prima lună — gratuită la orice pachet</p>
+      <p class="price-note">Prima lună — gratuită. Anulezi oricând.</p>
     </div>
   </div>
   <div class="bundle-card reveal" style="margin-top:1.5rem;">
     <div class="bundle-info">
       <div class="bundle-title">🔥 Pachet Complet — Site + Chatbot AI</div>
-      <div class="bundle-desc">Cel mai bun raport calitate-preț. Totul la un loc, configurat și gata de folosit în 7 zile.</div>
+      <div class="bundle-desc">Site profesional + chatbot configurat și gata de folosit. Totul livrat în 7 zile, la un preț negociat împreună.</div>
     </div>
     <div>
-      <div class="bundle-price" style="font-size:1.2rem;">Preț personalizat <small>+ 39€/lună chatbot</small></div>
+      <div class="bundle-price" style="font-size:1.2rem;">Preț la cerere <small>+ 39€/lună chatbot</small></div>
       <a href="#contact" class="btn-primary" style="margin-top:.8rem; display:inline-block; text-decoration:none; padding:.75rem 1.8rem; border-radius:50px; font-size:.95rem;">Vreau pachetul complet</a>
     </div>
   </div>
@@ -1032,23 +1119,25 @@
   <div class="testimonials-grid">
     <div class="testimonial-card reveal">
       <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"Emilian a livrat site-ul în 5 zile și arată exact cum mi-am dorit. Am început să primesc cereri de ofertă de pe site din prima săptămână. Recomand cu încredere oricărei firme mici!"</p>
+      <p class="testimonial-text">"Sincer, nu mă așteptam să fie gata în 5 zile. Mi-a trimis site-ul și era fix ce voiam — în prima săptămână am primit 3 cereri de ofertă prin formularul de contact. Merită fiecare leu."</p>
       <div class="testimonial-author">
         <div class="testimonial-avatar av-purple">AM</div>
         <div>
           <div class="testimonial-name">Andrei Moldovan</div>
-          <div class="testimonial-role">Constructor independent, Cluj-Napoca</div>
+          <div class="testimonial-role">Constructor PF</div>
+          <div class="testimonial-role" style="color:var(--accent2);font-size:.75rem;margin-top:.1rem;">Cluj-Napoca</div>
         </div>
       </div>
     </div>
     <div class="testimonial-card reveal reveal-delay-1">
       <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text">"Chatbot-ul AI a schimbat complet cum gestionăm programările. Acum 80% din programări vin automat, fără să stăm la telefon. Prețul e mic față de ce aduce."</p>
+      <p class="testimonial-text">"De când am chatbot-ul, nu mai stau la telefon să confirm programări. Vine mesajul, chatbot-ul întreabă, programează și gata. Lunar economisesc vreo 2-3 ore și nu mai scap clienți care sunau când eram ocupată."</p>
       <div class="testimonial-author">
         <div class="testimonial-avatar av-cyan">RI</div>
         <div>
           <div class="testimonial-name">Raluca Ionescu</div>
-          <div class="testimonial-role">Proprietar cabinet stomatologic, București</div>
+          <div class="testimonial-role">Cabinet stomatologic SmileClinic</div>
+          <div class="testimonial-role" style="color:var(--accent2);font-size:.75rem;margin-top:.1rem;">București, Sector 3</div>
         </div>
       </div>
     </div>
@@ -1061,13 +1150,15 @@
     <div class="garantie-badge">🛡️</div>
     <h2 class="garantie-title">Garanție <span>7 zile</span></h2>
     <p class="garantie-text">
-      Livrez site-ul în <strong>7 zile lucrătoare</strong> sau îți returnez <strong>integral banii</strong>.<br>Fără discuții.
+      Livrez în <strong>7 zile lucrătoare</strong> de la confirmarea proiectului.<br>
+      Dacă nu respect termenul, returnez <strong>100% din avans</strong>.<br>
+      Simplu și clar.
     </p>
     <a href="#contact" class="btn-primary">Începe acum — fără risc</a>
     <div class="garantie-points">
-      <div class="garantie-point"><span>✓</span> Rambursare completă</div>
+      <div class="garantie-point"><span>✓</span> 100% din avans returnat</div>
+      <div class="garantie-point"><span>✓</span> Termen calculat de la confirmarea proiectului</div>
       <div class="garantie-point"><span>✓</span> Fără contract pe termen lung</div>
-      <div class="garantie-point"><span>✓</span> Anulezi oricând</div>
     </div>
   </div>
 </section>
